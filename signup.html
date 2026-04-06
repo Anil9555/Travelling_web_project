@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account | Luxury Travel</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --primary: #0f172a;
+        --secondary: #efd9b2;
+        --text-light: #f1f5f9;
+        --glass: rgba(255, 255, 255, 0.03);
+        --glass-border: rgba(255, 255, 255, 0.1);
+    }
+
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: radial-gradient(circle at top right, #1e293b, #0f172a);
+        font-family: 'Manrope', sans-serif;
+        color: var(--text-light);
+        overflow: hidden;
+    }
+
+    .signup-container {
+        width: 100%;
+        max-width: 400px;
+        padding: 50px 40px;
+        border-radius: 24px;
+        background: var(--glass);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--glass-border);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        animation: slideUp 0.8s ease-out;
+    }
+
+    @keyframes slideUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2.8rem;
+        margin: 0 0 10px;
+        color: var(--secondary);
+        font-weight: 600;
+    }
+
+    p.subtitle {
+        font-size: 0.9rem;
+        color: #94a3b8;
+        margin-bottom: 35px;
+        letter-spacing: 0.5px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    input {
+        width: 100%;
+        padding: 14px 18px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--glass-border);
+        border-radius: 12px;
+        color: white;
+        font-family: inherit;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: var(--secondary);
+        background: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 0 0 4px rgba(239, 217, 178, 0.1);
+    }
+
+    button {
+        width: 100%;
+        padding: 16px;
+        margin-top: 10px;
+        border: none;
+        border-radius: 12px;
+        background: var(--secondary);
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px -5px rgba(239, 217, 178, 0.3);
+        filter: brightness(1.1);
+    }
+
+    .login-link {
+        display: block;
+        margin-top: 25px;
+        text-decoration: none;
+        color: #94a3b8;
+        font-size: 0.9rem;
+    }
+
+    .login-link strong {
+        color: var(--secondary);
+        margin-left: 5px;
+    }
+
+    .login-link:hover strong {
+        text-decoration: underline;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="signup-container">
+    <h2>Create Account</h2>
+    <p class="subtitle">Join our community of world explorers.</p>
+
+    <form id="signupForm">
+        <div class="form-group">
+            <input type="text" id="name" placeholder="Full Name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" id="email" placeholder="Email Address" required>
+        </div>
+        <div class="form-group">
+            <input type="password" id="password" placeholder="Choose Password" required>
+        </div>
+        <button type="submit">Create Account</button>
+    </form>
+
+    <a href="login.html" class="login-link">Already have an account? <strong>Sign In</strong></a>
+</div>
+
+<script src="assets/js/auth.js"></script>
+<script>
+document.getElementById("signupForm").addEventListener("submit", function(event){
+    event.preventDefault();
+
+    const result = window.travelAuth.signup({
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        password: document.getElementById("password").value
+    });
+
+    if(!result.ok){
+        alert(result.message);
+        return;
+    }
+
+    alert("Account created successfully.");
+    window.location.href = "login.html";
+});
+</script>
+
+</body>
+</html>

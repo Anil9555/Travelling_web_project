@@ -1,0 +1,94 @@
+body.dark-mode {
+  background:
+    radial-gradient(circle at top, rgba(239, 217, 178, 0.06), transparent 24%),
+    linear-gradient(180deg, #110d0b 0%, #17110d 48%, #1f1712 100%) !important;
+  color: #f4e9da !important;
+}
+
+body.dark-mode .popular,
+body.dark-mode .package,
+body.dark-mode .gallery {
+  background: transparent !important;
+}
+
+body.dark-mode .h2,
+body.dark-mode .h3,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #f6efe6 !important;
+}
+
+body.dark-mode p,
+body.dark-mode .section-text,
+body.dark-mode .card-text,
+body.dark-mode .contact-text,
+body.dark-mode .footer-text,
+body.dark-mode .form-text,
+body.dark-mode .contact-link,
+body.dark-mode address,
+body.dark-mode .footer-bottom-link,
+body.dark-mode .copyright {
+  color: rgba(244, 233, 218, 0.76) !important;
+}
+
+body.dark-mode a {
+  color: inherit !important;
+}
+
+body.dark-mode .tour-search .container,
+body.dark-mode .header-bottom .container,
+body.dark-mode .auth-box,
+body.dark-mode .cta .container {
+  border-color: rgba(239, 217, 178, 0.12) !important;
+}
+
+body.dark-mode .popular-card,
+body.dark-mode .package-card,
+body.dark-mode .gallery-item {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(239, 217, 178, 0.08) !important;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35) !important;
+}
+
+body.dark-mode .popular-card .card-content,
+body.dark-mode .package-card .card-content {
+  background: linear-gradient(180deg, rgba(30, 22, 18, 0.96), rgba(19, 14, 11, 0.96)) !important;
+}
+
+body.dark-mode .card-subtitle,
+body.dark-mode .section-subtitle {
+  color: #e2c08a !important;
+}
+
+body.dark-mode .meta-box {
+  background: rgba(239, 217, 178, 0.08) !important;
+  color: #f4e9da !important;
+}
+
+body.dark-mode .meta-box ion-icon,
+body.dark-mode .contact-item ion-icon {
+  color: #d7af73 !important;
+}
+
+body.dark-mode .package-card .card-price,
+body.dark-mode .footer-top,
+body.dark-mode .footer-bottom {
+  background:
+    radial-gradient(circle at top, rgba(239, 217, 178, 0.06), transparent 28%),
+    linear-gradient(180deg, #1a120d 0%, #100b09 100%) !important;
+}
+
+body.dark-mode input,
+body.dark-mode select {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: #f6efe6 !important;
+  border: 1px solid rgba(239, 217, 178, 0.14) !important;
+}
+
+body.dark-mode input::placeholder {
+  color: rgba(244, 233, 218, 0.46) !important;
+}

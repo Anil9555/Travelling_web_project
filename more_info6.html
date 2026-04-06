@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>West Bengal | Luxury Travel</title>
+
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Manrope', sans-serif;
+      background: #f8fafc;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(60%);
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      width: 100%;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .hero-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(40px, 8vw, 80px);
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+
+    .book-btn:hover {
+      transform: translateY(-4px);
+    }
+
+    .home-btn {
+      margin-top: 20px;
+      display: inline-block;
+      text-decoration: none;
+      padding: 10px 25px;
+      border-radius: 25px;
+      border: 2px solid #0a2a66;
+      color: #0a2a66;
+    }
+
+    /* CONTENT */
+    .content {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 40px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    /* POPUP */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 50, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.4s;
+    }
+
+    .popup.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 35px;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 15px;
+      text-align: center;
+      transition: 0.4s;
+    }
+
+    .popup.active .popup-content {
+      transform: scale(1);
+    }
+
+    .popup input,
+    .popup select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      font-family: inherit;
+    }
+
+    .popup .btn {
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    .close {
+      float: right;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    /* SUCCESS */
+    .success {
+      display: none;
+      margin-top: 20px;
+    }
+
+    .check {
+      font-size: 50px;
+      color: #1e4ed8;
+      animation: pop 0.5s ease;
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(0);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* ================= ROYAL GALLERY ================= */
+
+    .royal-gallery {
+      padding: 90px 20px;
+      background: linear-gradient(to bottom, #ffffff, #eef5ff);
+    }
+
+    .gallery-container {
+      max-width: 1200px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .gallery-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      color: #0f172a;
+      margin-bottom: 15px;
+    }
+
+    .gallery-subtext {
+      font-family: 'Manrope', sans-serif;
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 50px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+      transition: 0.4s;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      transition: 0.6s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-item:hover {
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+    }
+
+    /* ================= DARK MODE FULL FIX ================= */
+
+body.dark-mode{
+  background:#0b1120 !important;
+  color:#f1f5f9 !important;
+}
+
+/* All headings */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6{
+  color:#ffffff !important;
+}
+
+/* Paragraphs */
+body.dark-mode p{
+  color:#e5e7eb !important;
+}
+
+/* Links */
+body.dark-mode a{
+  color: #efd9b2 !important;
+}
+
+/* Sections */
+body.dark-mode .content,
+body.dark-mode .popular,
+body.dark-mode .royal-gallery,
+body.dark-mode .popup-content,
+body.dark-mode .gallery-item {
+  background:#0f172a !important;
+  color:#f1f5f9 !important;
+  border: 1px solid rgba(239, 217, 178, 0.1);
+}
+
+/* Cards */
+body.dark-mode .card-content{
+  background:#1f2937 !important;
+  color:white !important;
+}
+
+/* Inputs */
+body.dark-mode input,
+body.dark-mode select{
+  background:#1f2937;
+  color:white;
+  border:1px solid #374151;
+}
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <img src="assets/images/West bengal.jpg" alt="beach image">
+    <div class="hero-text">
+      <h1>Cultural Highlights</h1>
+      <button class="btn btn-secondary" onclick="openPopup()">Book Now</button>
+      <button id="themeToggle" class="btn btn-primary" style="margin-left: 10px;">Dark mode</button>
+    </div>
+  </section>
+
+  <section class="content">
+    <h2>Cultural Highlights</h2>
+    <p>
+      Durga Puja Festival: The grandest celebration in the state, transforming Kolkata into a vibrant cultural carnival.
+    </p>
+
+    <p>Art & Literature: Birthplace of Nobel Laureate Rabindranath Tagore and a hub of Bengali literature, music, and
+      poetry.
+    </p>
+
+    <p>
+      Traditional Cuisine: Famous for sweets like Rasgulla and Sandesh, along with rich Bengali fish curries.
+    </p>
+
+    <p>
+      Classical & Folk Arts: Baul music, Chhau dance, and traditional theatre reflect deep artistic roots.
+    </p>
+
+    <p>
+      Handicrafts: Renowned for terracotta art, Kantha embroidery, and Baluchari silk sarees.
+    </p>
+
+    <h2>Historical Attractions</h2>
+
+    <p>
+      <strong>Victoria Memorial, Kolkata:</strong> A grand colonial-era monument symbolizing British architectural influence.
+
+      <strong>Howrah Bridge:</strong> An iconic engineering marvel and landmark of Kolkata.<br>
+
+      <strong>Murshidabad:</strong> Former capital of Bengal, rich in Nawabi history and heritage buildings.<br>
+
+      <strong>Hazarduari Palace:</strong> A magnificent 19th-century palace with historical significance.<br>
+
+      <strong>Darjeeling:</strong> Known for colonial charm, tea estates, and the UNESCO-listed Darjeeling Himalayan Railway.
+    </p>
+
+    <a href="index.html" class="btn btn-primary">Return To Home</a>
+    <button class="btn btn-secondary" onclick="openPopup()">Book Now</button>
+  </section>
+
+  <!-- ROYAL GALLERY SECTION -->
+  <section class="royal-gallery">
+    <div class="gallery-container">
+
+      <h2 class="gallery-heading">Memories</h2>
+      <p class="gallery-subtext">
+        A glimpse of elegance, beauty, and unforgettable moments.
+      </p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="assets/images/bengal1.jpg" alt="">
+        </div>
+
+        <div class="gallery-item">
+          <img src="assets/images/bengal2.jpg" alt="">
+        </div>
+
+        <div class="gallery-item">
+          <img src="assets/images/bengal3.jpg" alt="">
+        </div>
+
+        <div class="gallery-item">
+          <img src="assets/images/bengal4.jpg" alt="">
+        </div>
+
+        
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BOOKING POPUP -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup()">×</span>
+      <h2>Book Your Stay</h2>
+
+      <form id="bookingForm">
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="email" id="email" placeholder="Your Email">
+
+        <select id="type">
+          <option value="">Select Booking Type</option>
+          <option value="single">Single Person</option>
+          <option value="family">Family Booking</option>
+        </select>
+
+        <input type="number" id="members" placeholder="Family Members (min 2)" style="display:none;">
+
+        <input type="date" id="date">
+
+        <button type="submit" class="btn btn-secondary">Confirm Booking</button>
+      </form>
+
+      <div class="success" id="successMsg">
+        <div class="check">✔</div>
+        <p>Booking Confirmed Successfully!</p>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <script src="assets/js/theme.js"></script>
+
+  <script>
+    // Popup open
+    function openPopup() {
+      document.getElementById("popup").classList.add("active");
+    }
+
+    // Popup close
+    function closePopup() {
+      document.getElementById("popup").classList.remove("active");
+    }
+
+    // Show members if family
+    document.getElementById("type").addEventListener("change", function () {
+      let members = document.getElementById("members");
+      if (this.value === "family") {
+        members.style.display = "block";
+      } else {
+        members.style.display = "none";
+      }
+    });
+
+    // Form validation + animation
+    document.getElementById("bookingForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let type = document.getElementById("type").value;
+      let members = document.getElementById("members").value;
+      let date = document.getElementById("date").value;
+
+      if (!name || !email || !type || !date) {
+        alert("Please fill all required fields");
+        return;
+      }
+
+      if (type === "family" && (!members || members < 2)) {
+        alert("Family booking must have at least 2 members");
+        return;
+      }
+
+      document.getElementById("bookingForm").style.display = "none";
+      document.getElementById("successMsg").style.display = "block";
+
+      setTimeout(() => {
+        closePopup();
+        location.reload();
+      }, 3000);
+    });
+
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Luxury Travel</title>
+    <link rel="stylesheet" href="assets/css/contactus.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Dark mode overrides for the Contact page panels and forms */
+        body.dark-mode .info-panel,
+        body.dark-mode .form-panel {
+            background: #0f172a !important; /* Deep navy from luxury theme */
+            color: #f1f5f9 !important;
+            border: 1px solid rgba(239, 217, 178, 0.1) !important;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6) !important;
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+        }
+
+        body.dark-mode .section-title {
+            color: #ffffff !important;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        body.dark-mode .section-subtitle {
+            color: #efd9b2 !important;
+        }
+
+        body.dark-mode .form-group label,
+        body.dark-mode label {
+            color: #efd9b2;
+            font-weight: 600;
+        }
+
+        body.dark-mode .form-group input,
+        body.dark-mode .form-group textarea {
+            background: rgba(255, 255, 255, 0.05) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            color: #ffffff !important;
+            border-radius: 10px;
+        }
+
+        body.dark-mode .form-group input::placeholder,
+        body.dark-mode .form-group textarea::placeholder {
+            color: #94a3b8 !important;
+        }
+
+        body.dark-mode .form-group input:focus,
+        body.dark-mode .form-group textarea:focus {
+            border-color: #efd9b2 !important;
+            background: rgba(255, 255, 255, 0.08) !important;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(239, 217, 178, 0.1);
+        }
+
+        body.dark-mode .info-icon {
+            background: rgba(239, 217, 178, 0.1) !important;
+            color: #efd9b2 !important;
+            border-radius: 50%;
+        }
+
+        body.dark-mode .info-item strong {
+            color: #efd9b2;
+        }
+
+        body.dark-mode .info-item p {
+            color: #94a3b8 !important;
+        }
+
+        body.dark-mode .social-link {
+            background: rgba(255, 255, 255, 0.05);
+            color: #efd9b2;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .social-link:hover {
+            background: #efd9b2;
+            color: #0f172a;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="contact-hero">
+        <div class="hero-backdrop"></div>
+        <div class="container hero-shell">
+            <div class="hero-topbar">
+                <a href="index.html" class="btn btn-primary">Back to Home</a>
+                <div class="hero-actions">
+                    <a href="book.html" class="btn btn-secondary">Book Now</a>
+                    <button id="themeToggle" type="button">Dark mode</button>
+                </div>
+            </div>
+
+            <div class="hero-copy">
+                <p class="section-subtitle">Contact Us</p>
+                <h1>Let's plan a journey that feels elegant from the very first conversation.</h1>
+                <p class="hero-text">
+                    Connect with our travel team for personalized recommendations, premium itinerary planning, booking
+                    support, or destination guidance crafted around your style.
+                </p>
+            </div>
+
+            <div class="quick-links">
+                <a href="all_pakage.html" class="quick-link">All Packages</a>
+                <a href="more_destination.html" class="quick-link">More Destinations</a>
+                <a href="aboutus.html" class="quick-link">About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="section reveal">
+            <div class="container contact-grid">
+                <article class="info-panel">
+                    <p class="section-subtitle">Get In Touch</p>
+                    <h2 class="section-title">Travel support with a premium, human approach.</h2>
+                    <p class="section-text">
+                        Whether you are choosing your first destination or refining a luxury itinerary, we are here to
+                        make every detail feel easier, clearer, and more beautiful.
+                    </p>
+
+                    <div class="info-list">
+                        <div class="info-item">
+                            <span class="info-icon"><i class="fas fa-location-dot"></i></span>
+                            <div>
+                                <strong>Studio Address</strong>
+                                <p>Noida, India</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="info-icon"><i class="fas fa-phone"></i></span>
+                            <div>
+                                <strong>Phone</strong>
+                                <p>+91 9876543210</p>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <span class="info-icon"><i class="fas fa-envelope"></i></span>
+                            <div>
+                                <strong>Email</strong>
+                                <p>support@journeyexplore.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/" class="social-link" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/" class="social-link" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/" class="social-link" aria-label="YouTube"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://twitter.com/" class="social-link" aria-label="X"><i
+                                class="fab fa-x-twitter"></i></a>
+                    </div>
+                </article>
+
+                <article class="form-panel">
+                    <p class="section-subtitle">Send A Message</p>
+                    <h2 class="section-title">Tell us what kind of journey you want next.</h2>
+
+                    <form id="contactForm">
+                        <div class="field-grid">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" placeholder="Max 12 letters" maxlength="12" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="emailAddress">Email Address</label>
+                                <input type="email" id="emailAddress" placeholder="you@example.com" required>
+                            </div>
+                        </div>
+
+                        <div class="field-grid">
+                            <div class="form-group">
+                                <label for="phoneNumber">Phone Number</label>
+                                <input type="tel" id="phoneNumber" placeholder="10-digit number" pattern="[0-9]{10}" maxlength="10" minlength="10"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="travelInterest">Travel Interest</label>
+                                <input type="text" id="travelInterest" placeholder="Max 50 letters" maxlength="50">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" placeholder="Max 500 letters" maxlength="500"
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-secondary full-width">Submit Inquiry</button>
+                        <p class="success" id="successMsg">Message sent successfully. Our team will get back to you shortly.</p>
+                    </form>
+                </article>
+            </div>
+        </section>
+
+        <section class="section reveal map-section">
+            <div class="container">
+                <div class="section-heading center">
+                    <p class="section-subtitle">Global Reach</p>
+                    <h2 class="section-title">Where your next trip begins</h2>
+                </div>
+
+                <div class="map-frame">
+                    <iframe src="https://maps.google.com/maps?q=world&t=&z=2&ie=UTF8&iwloc=&output=embed"
+                        title="World map"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/js/theme.js"></script>
+    <script>
+        function revealOnScroll() {
+            document.querySelectorAll(".reveal").forEach(function (element) {
+                if (element.getBoundingClientRect().top < window.innerHeight - 100) {
+                    element.classList.add("active");
+                }
+            });
+        }
+
+        document.getElementById("contactForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Ensure phone number is exactly 10 digits
+            const phoneInput = document.getElementById("phoneNumber");
+            if (!/^[0-9]{10}$/.test(phoneInput.value)) {
+                alert("Please enter exactly 10 digits for the phone number.");
+                return;
+            }
+
+            const success = document.getElementById("successMsg");
+            success.classList.add("active");
+            
+            // Auto-hide success message after 5 seconds
+            setTimeout(() => {
+                success.classList.remove("active");
+            }, 5000);
+
+            this.reset();
+        });
+
+        window.addEventListener("scroll", revealOnScroll);
+        document.addEventListener("DOMContentLoaded", revealOnScroll);
+    </script>
+</body>
+
+</html>

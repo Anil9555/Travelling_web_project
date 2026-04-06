@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Love trip</title>
+    <link rel="stylesheet" href="assets/css/aboutus.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Dark mode overrides for specific sections on the About page */
+        body.dark-mode .experience-card,
+        body.dark-mode .price-box,
+        body.dark-mode .review-card {
+            background-color: #111827 !important;
+            color: #f1f5f9 !important;
+            border: 1px solid #1f2937;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode .experience-card h3,
+        body.dark-mode .price-box .section-title,
+        body.dark-mode .review-card blockquote {
+            color: #ffffff !important;
+        }
+
+        body.dark-mode .experience-tag {
+            background-color: #1f2937;
+            color: #efd9b2;
+        }
+
+        body.dark-mode .price-line {
+            color: #e5e7eb;
+        }
+
+        body.dark-mode .price-line strong {
+            color: #efd9b2;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="about-hero">
+        <div class="hero-backdrop"></div>
+        <div class="container hero-shell">
+            <div class="hero-topbar">
+                <a href="index.html" class="btn btn-primary">Back to Home</a>
+                <div class="hero-actions">
+                    <a href="book.html" class="btn btn-secondary">Book Now</a>
+                    <button id="themeToggle" type="button">Dark mode</button>
+                </div>
+            </div>
+
+            <div class="hero-copy">
+                <p class="section-subtitle">Our Story</p>
+                <h1>Curating journeys with luxury, warmth, and unforgettable detail.</h1>
+                <p class="hero-text">
+                    We design refined travel experiences that balance iconic destinations, thoughtful comfort, and a
+                    strong visual identity across every part of your journey.
+                </p>
+            </div>
+
+            <div class="hero-metrics">
+                <article class="metric-card">
+                    <span class="metric-label">Travelers Served</span>
+                    <strong data-target="5000">0</strong>
+                </article>
+                <article class="metric-card">
+                    <span class="metric-label">Curated Places</span>
+                    <strong data-target="120">0</strong>
+                </article>
+                <article class="metric-card">
+                    <span class="metric-label">Years Of Trust</span>
+                    <strong data-target="15">0</strong>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="section reveal">
+            <div class="container story-grid">
+                <div class="section-copy">
+                    <p class="section-subtitle">About Us</p>
+                    <h2 class="section-title">Luxury travel should feel personal, polished, and deeply memorable.</h2>
+                    <p class="section-text">
+                        Our approach blends destination storytelling, elevated hospitality, and carefully planned
+                        details. From iconic landmarks to hidden cultural gems, we shape experiences that feel effortless
+                        to travelers and beautifully intentional at every step.
+                    </p>
+                    <p class="section-text">
+                        We believe great journeys are more than transport and hotels. They are mood, atmosphere,
+                        comfort, and moments that stay with you long after the trip ends.
+                    </p>
+                </div>
+
+                <div class="story-panel">
+                    <div class="story-card">
+                        <span class="story-kicker">Signature Standard</span>
+                        <h3>Premium planning with a warm human touch.</h3>
+                        <p>
+                            Every itinerary is shaped to feel elevated yet welcoming, with attention to beauty,
+                            simplicity, and confidence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section reveal">
+            <div class="container">
+                <div class="section-heading center">
+                    <p class="section-subtitle">Top Experiences</p>
+                    <h2 class="section-title">What defines our travel style</h2>
+                </div>
+
+                <div class="experience-grid">
+                    <article class="experience-card">
+                        <span class="experience-tag">Stay</span>
+                        <h3>Luxury Resorts</h3>
+                        <p>Elegant stays, premium comfort, and spaces designed for calm, privacy, and beauty.</p>
+                    </article>
+                    <article class="experience-card">
+                        <span class="experience-tag">Explore</span>
+                        <h3>Adventure Tours</h3>
+                        <p>Immersive outings that bring together discovery, local character, and memorable pacing.</p>
+                    </article>
+                    <article class="experience-card">
+                        <span class="experience-tag">Taste</span>
+                        <h3>Fine Dining</h3>
+                        <p>Curated culinary moments with atmosphere, service, and destination-led flavor.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section reveal gallery-section">
+            <div class="container">
+                <div class="section-heading center">
+                    <p class="section-subtitle">Visual Journey</p>
+                    <h2 class="section-title">A glimpse of the world we help you experience</h2>
+                </div>
+
+                <div class="gallery-grid">
+                    <img src="assets/images/bengal4.jpg" alt="Destination gallery image">
+                    <img src="assets/images/gallery-1.jpg" alt="Destination gallery image">
+                    <img src="assets/images/burj3.jpg" alt="Destination gallery image">
+                    <img src="assets/images/Golden-temple.jpg" alt="Destination gallery image">
+                    <img src="assets/images/popular-2.jpg" alt="Destination gallery image">
+                    <img src="assets/images/taj3.jpg" alt="Destination gallery image">
+                    <img src="assets/images/bengal2.jpg" alt="Destination gallery image">
+                    <img src="assets/images/Odisha.jpg" alt="Destination gallery image">
+                </div>
+            </div>
+        </section>
+
+        <section class="section reveal">
+            <div class="container split-grid">
+                <article class="price-box">
+                    <p class="section-subtitle">Availability</p>
+                    <h2 class="section-title">Designed for travelers who want beauty without compromise.</h2>
+                    <p class="section-text">
+                        Our premium itineraries begin with clear planning, curated stays, and service that feels smooth
+                        from the first inquiry to final confirmation.
+                    </p>
+                    <div class="price-line">Starting from <strong>$260 / person</strong></div>
+                    <button class="btn btn-secondary" type="button" onclick="openBooking()">Check Availability</button>
+                </article>
+
+                <article class="review-card">
+                    <p class="section-subtitle">Traveler Voice</p>
+                    <blockquote>
+                        "Absolutely unforgettable. Everything felt curated, elegant, and seamless from the first step
+                        to the final day."
+                    </blockquote>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <div class="floating-book">
+        <a href="book.html" class="btn btn-secondary">Book Now</a>
+    </div>
+
+    <div class="booking-popup" id="bookingPopup">
+        <div class="booking-box">
+            <button class="close-booking" type="button" onclick="closeBooking()">&times;</button>
+            <h2>Check Availability</h2>
+
+            <form id="bookingForm">
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="checkin">Check-In Date</label>
+                    <input type="date" id="checkin" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="checkout">Check-Out Date</label>
+                    <input type="date" id="checkout" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="guests">Guests</label>
+                    <input type="number" id="guests" min="1" max="10" required>
+                </div>
+
+                <button type="submit" class="btn btn-secondary full-width">Check Now</button>
+            </form>
+
+            <p id="formMessage"></p>
+        </div>
+    </div>
+
+    <script src="assets/js/theme.js"></script>
+    <script>
+        function revealOnScroll() {
+            document.querySelectorAll(".reveal").forEach(function (element) {
+                if (element.getBoundingClientRect().top < window.innerHeight - 100) {
+                    element.classList.add("active");
+                }
+            });
+        }
+
+        function animateCounters() {
+            document.querySelectorAll("[data-target]").forEach(function (counter) {
+                const target = Number(counter.getAttribute("data-target"));
+                let current = 0;
+                const step = Math.max(1, Math.ceil(target / 80));
+
+                function tick() {
+                    current = Math.min(target, current + step);
+                    counter.textContent = current;
+
+                    if (current < target) {
+                        window.requestAnimationFrame(tick);
+                    }
+                }
+
+                tick();
+            });
+        }
+
+        function openBooking() {
+            document.getElementById("bookingPopup").style.display = "flex";
+        }
+
+        function closeBooking() {
+            document.getElementById("bookingPopup").style.display = "none";
+        }
+
+        document.getElementById("bookingForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const checkin = new Date(document.getElementById("checkin").value);
+            const checkout = new Date(document.getElementById("checkout").value);
+            const message = document.getElementById("formMessage");
+
+            if (checkout <= checkin) {
+                message.style.color = "#ff8f8f";
+                message.textContent = "Check-out date must be after check-in date.";
+                return;
+            }
+
+            message.style.color = "#efd9b2";
+            message.textContent = "Rooms available. Our team will contact you shortly.";
+        });
+
+        window.addEventListener("scroll", revealOnScroll);
+        document.addEventListener("DOMContentLoaded", function () {
+            revealOnScroll();
+            animateCounters();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enquiry | Luxury Travel</title>
+  <link rel="stylesheet" href="assets/css/enquiry.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <section class="enquiry-hero">
+    <div class="hero-backdrop"></div>
+    <div class="container hero-shell">
+      <div class="hero-topbar">
+        <a href="index.html" class="btn btn-primary">Back to Home</a>
+        <div class="hero-actions">
+          <a href="book.html" class="btn btn-secondary">Book Now</a>
+          <button id="themeToggle" type="button">Dark mode</button>
+        </div>
+      </div>
+
+      <div class="hero-copy">
+        <p class="section-subtitle">Travel Enquiry</p>
+        <h1>Share your travel vision and let us shape the perfect escape.</h1>
+        <p class="hero-text">
+          Submit your destination, dates, and preferences. Our team will respond with refined recommendations tailored
+          to your style, budget, and timing.
+        </p>
+      </div>
+
+      <div class="hero-highlights">
+        <article class="highlight-card">
+          <span class="highlight-label">Response</span>
+          <strong>Fast and personal travel guidance</strong>
+        </article>
+        <article class="highlight-card">
+          <span class="highlight-label">Planning</span>
+          <strong>Luxury-first destination suggestions</strong>
+        </article>
+        <article class="highlight-card">
+          <span class="highlight-label">Support</span>
+          <strong>Clear next steps from enquiry to booking</strong>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="section reveal">
+      <div class="container enquiry-grid">
+        <article class="info-panel">
+          <p class="section-subtitle">Plan With Us</p>
+          <h2 class="section-title">A premium enquiry experience with thoughtful support.</h2>
+          <p class="section-text">
+            Tell us where you want to go, when you want to travel, and how you want the journey to feel. We will help
+            translate that into a polished itinerary.
+          </p>
+
+          <div class="info-list">
+            <div class="info-item">
+              <span class="info-icon">01</span>
+              <div>
+                <strong>Choose your destination</strong>
+                <p>Select the place that matches your mood and travel goals.</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <span class="info-icon">02</span>
+              <div>
+                <strong>Share your dates</strong>
+                <p>Help us recommend the best possible options and availability.</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <span class="info-icon">03</span>
+              <div>
+                <strong>Receive curated guidance</strong>
+                <p>Our team responds with elegant, practical next steps.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="form-panel">
+          <p class="section-subtitle">Send Enquiry</p>
+          <h2 class="section-title">Tell us about your next journey.</h2>
+
+          <form id="enquiryForm">
+            <div class="field-grid">
+              <div class="field">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Your full name" required>
+              </div>
+
+              <div class="field">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="you@example.com" required>
+              </div>
+            </div>
+
+            <div class="field-grid">
+              <div class="field">
+                <label for="destination">Destination</label>
+                <select id="destination">
+                  <option>Goa</option>
+                  <option>Manali</option>
+                  <option>Dubai</option>
+                  <option>Kyoto</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="guests">Guests</label>
+                <input type="number" id="guests" min="1" placeholder="Number of guests">
+              </div>
+            </div>
+
+            <div class="field-grid">
+              <div class="field">
+                <label for="checkin">Check-in Date</label>
+                <input type="date" id="checkin" required>
+              </div>
+
+              <div class="field">
+                <label for="checkout">Check-out Date</label>
+                <input type="date" id="checkout" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Special Request</label>
+              <textarea id="message" rows="4"
+                placeholder="Tell us about room style, experiences, transport, or anything special."></textarea>
+            </div>
+
+            <button class="btn btn-secondary full-width" type="submit">Submit Enquiry</button>
+
+            <p class="success" id="successMsg">Enquiry submitted successfully. We will contact you soon.</p>
+          </form>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/theme.js"></script>
+  <script>
+    function revealOnScroll() {
+      document.querySelectorAll(".reveal").forEach(function (element) {
+        if (element.getBoundingClientRect().top < window.innerHeight - 100) {
+          element.classList.add("active");
+        }
+      });
+    }
+
+    document.getElementById("enquiryForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const checkin = document.getElementById("checkin").value;
+      const checkout = document.getElementById("checkout").value;
+
+      if (!name || !email || !checkin || !checkout) {
+        alert("Please fill all required fields.");
+        return;
+      }
+
+      if (new Date(checkout) <= new Date(checkin)) {
+        alert("Check-out date must be after check-in date.");
+        return;
+      }
+
+      const data = {
+        name: name,
+        email: email,
+        destination: document.getElementById("destination").value,
+        guests: document.getElementById("guests").value,
+        checkin: checkin,
+        checkout: checkout,
+        message: document.getElementById("message").value
+      };
+
+      localStorage.setItem("userEnquiry", JSON.stringify(data));
+      document.getElementById("successMsg").classList.add("active");
+      event.target.reset();
+    });
+
+    window.addEventListener("scroll", revealOnScroll);
+    document.addEventListener("DOMContentLoaded", revealOnScroll);
+  </script>
+</body>
+
+</html>

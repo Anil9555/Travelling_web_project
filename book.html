@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Booking Journey</title>
+
+    <link rel="stylesheet" href="assets/css/book.css">
+    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <main class="booking-page">
+        <section class="booking-hero">
+            <div class="booking-shell">
+                <div class="booking-topbar">
+                    <a href="index.html" class="ghost-link">Back Home</a>
+                    <button id="themeToggle" type="button" class="ghost-link">Dark mode</button>
+                </div>
+
+                <div class="booking-intro">
+                    <p class="eyebrow">Luxury reservation</p>
+                    <h1>Design your journey step by step.</h1>
+                    <p>
+                        Build your escape with curated packages, premium add-ons, elegant payment, and a final review
+                        before confirmation.
+                    </p>
+                </div>
+
+                <div class="booking-layout">
+                    <section class="booking-form-box">
+                        <div class="progress-header">
+                            <div>
+                                <p class="eyebrow">Booking path</p>
+                                <h2 id="stepTitle">Choose your signature package</h2>
+                            </div>
+                            <span class="step-counter" id="stepCounter">Step 1 of 5</span>
+                        </div>
+
+                        <div class="progress-container">
+                            <div class="progress-track"></div>
+                            <div class="progress" id="progress"></div>
+                            <div class="booking-circle active">1</div>
+                            <div class="booking-circle">2</div>
+                            <div class="booking-circle">3</div>
+                            <div class="booking-circle">4</div>
+                            <div class="booking-circle">5</div>
+                        </div>
+
+                        <div class="booking-step active" data-step-title="Choose your signature package">
+                            <div class="package-cards">
+                                <button type="button" class="booking-card"
+                                    onclick="selectPackage(this, 'Beach Holiday', 15000, 'Goa coast, private cabana and sunset dinner')">
+                                    <span class="card-badge">Best for unwind</span>
+                                    <h3>Beach Holiday</h3>
+                                    <p>3 Nights / 4 Days</p>
+                                    <small>Goa coast, private cabana and sunset dinner</small>
+                                    <strong>Rs. 15,000</strong>
+                                </button>
+
+                                <button type="button" class="booking-card"
+                                    onclick="selectPackage(this, 'River Tour', 12000, 'Houseboat stay, riverside breakfast and guided cruise')">
+                                    <span class="card-badge">Most scenic</span>
+                                    <h3>River Tour</h3>
+                                    <p>2 Nights / 3 Days</p>
+                                    <small>Houseboat stay, riverside breakfast and guided cruise</small>
+                                    <strong>Rs. 12,000</strong>
+                                </button>
+
+                                <button type="button" class="booking-card"
+                                    onclick="selectPackage(this, 'Mountain Trek', 18000, 'Luxury camp, porter support and alpine dining')">
+                                    <span class="card-badge">Most adventurous</span>
+                                    <h3>Mountain Trek</h3>
+                                    <p>4 Nights / 5 Days</p>
+                                    <small>Luxury camp, porter support and alpine dining</small>
+                                    <strong>Rs. 18,000</strong>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="booking-step" data-step-title="Tell us about the traveller">
+                            <div class="field-grid">
+                                <label class="field">
+                                    <span>Full name</span>
+                                    <input type="text" id="travelerName" placeholder="Enter your full name">
+                                </label>
+
+                                <label class="field">
+                                    <span>Email address</span>
+                                    <input type="email" id="travelerEmail" placeholder="Enter your email">
+                                </label>
+
+                                <label class="field">
+                                    <span>Phone number</span>
+                                    <input type="tel" id="travelerPhone" placeholder="10-digit mobile number" maxlength="10">
+                                </label>
+
+                                <label class="field">
+                                    <span>Guests (Max 5)</span>
+                                    <input type="number" id="guestCount" min="1" max="5" value="2">
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="booking-step" data-step-title="Refine the stay experience">
+                            <div class="field-grid">
+                                <label class="field">
+                                    <span>Check-in date</span>
+                                    <input type="date" id="checkinDate">
+                                </label>
+
+                                <label class="field">
+                                    <span>Check-out date</span>
+                                    <input type="date" id="checkoutDate">
+                                </label>
+
+                                <label class="field">
+                                    <span>Room style</span>
+                                    <select id="roomType">
+                                        <option value="Luxury Suite" data-price="3500">Luxury Suite</option>
+                                        <option value="Cliff Villa" data-price="6000">Cliff Villa</option>
+                                        <option value="Sky Penthouse" data-price="8500">Sky Penthouse</option>
+                                    </select>
+                                </label>
+
+                                <label class="field">
+                                    <span>Airport transfer</span>
+                                    <select id="transferType">
+                                        <option value="Included" data-price="0">Included</option>
+                                        <option value="Chauffeur pickup" data-price="1800">Chauffeur pickup</option>
+                                        <option value="Limousine arrival" data-price="4000">Limousine arrival</option>
+                                    </select>
+                                </label>
+                            </div>
+
+                            <div class="addon-panel">
+                                <p class="addon-title">Curated add-ons</p>
+                                <label class="addon-item">
+                                    <input type="checkbox" value="2200" data-addon-label="Travel insurance"
+                                        onchange="updateAddons(this)">
+                                    <span>Travel insurance</span>
+                                    <strong>Rs. 2,200</strong>
+                                </label>
+
+                                <label class="addon-item">
+                                    <input type="checkbox" value="3200" data-addon-label="Private photographer"
+                                        onchange="updateAddons(this)">
+                                    <span>Private photographer</span>
+                                    <strong>Rs. 3,200</strong>
+                                </label>
+
+                                <label class="addon-item">
+                                    <input type="checkbox" value="4200" data-addon-label="Spa ritual"
+                                        onchange="updateAddons(this)">
+                                    <span>Spa ritual</span>
+                                    <strong>Rs. 4,200</strong>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="booking-step" data-step-title="Secure the reservation">
+                            <div class="field-grid">
+                                <label class="field field-wide">
+                                    <span>Card number</span>
+                                    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456">
+                                </label>
+
+                                <label class="field">
+                                    <span>Card holder</span>
+                                    <input type="text" id="cardHolder" placeholder="Name on card">
+                                </label>
+
+                                <label class="field">
+                                    <span>Expiry date</span>
+                                    <input type="text" id="expiryDate" placeholder="MM / YY">
+                                </label>
+
+                                <label class="field">
+                                    <span>CVV</span>
+                                    <input type="password" id="cvv" maxlength="4" placeholder="123">
+                                </label>
+                            </div>
+
+                            <div class="coupon-row">
+                                <input type="text" id="couponInput" placeholder="Enter coupon code">
+                                <button type="button" class="secondary-action" onclick="applyCoupon()">Apply coupon</button>
+                            </div>
+                        </div>
+
+                        <div class="booking-step" data-step-title="Review and confirm">
+                            <div class="review-card">
+                                <div class="review-row">
+                                    <span>Traveller</span>
+                                    <strong id="reviewTraveler">-</strong>
+                                </div>
+                                <div class="review-row">
+                                    <span>Package</span>
+                                    <strong id="reviewPackage">-</strong>
+                                </div>
+                                <div class="review-row">
+                                    <span>Stay dates</span>
+                                    <strong id="reviewDates">-</strong>
+                                </div>
+                                <div class="review-row">
+                                    <span>Suite and transfer</span>
+                                    <strong id="reviewStayPlan">-</strong>
+                                </div>
+                                <div class="review-row">
+                                    <span>Add-ons</span>
+                                    <strong id="reviewAddons">None selected</strong>
+                                </div>
+                                <div class="review-row review-total">
+                                    <span>Final total</span>
+                                    <strong>Rs. <span id="reviewTotal">0</span></strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="booking-actions">
+                            <button type="button" class="nav-btn nav-btn-muted" id="prevBtn">Previous</button>
+                            <button type="button" class="nav-btn" id="nextBtn">Continue</button>
+                        </div>
+                    </section>
+
+                    <aside class="booking-summary-box">
+                        <p class="eyebrow">Reservation summary</p>
+                        <h3>At a glance</h3>
+
+                        <div class="summary-group">
+                            <div class="summary-item">
+                                <span>Package</span>
+                                <strong id="packageName">-</strong>
+                            </div>
+                            <div class="summary-item">
+                                <span>Base fare</span>
+                                <strong>Rs. <span id="packagePrice">0</span></strong>
+                            </div>
+                            <div class="summary-item">
+                                <span>Suite & transfer</span>
+                                <strong>Rs. <span id="stayPrice">0</span></strong>
+                            </div>
+                            <div class="summary-item">
+                                <span>Add-ons</span>
+                                <strong>Rs. <span id="addonPrice">0</span></strong>
+                            </div>
+                            <div class="summary-item">
+                                <span>Discount</span>
+                                <strong><span id="discountLabel">No coupon</span></strong>
+                            </div>
+                        </div>
+
+                        <div class="summary-note">
+                            <p id="packageDescription">Select a package to begin your booking path.</p>
+                        </div>
+
+                        <div class="summary-total">
+                            <span>Total</span>
+                            <strong>Rs. <span id="totalPrice">0</span></strong>
+                        </div>
+
+                        <div class="summary-footer" id="confirmationCard" hidden>
+                            <p class="eyebrow">Confirmed</p>
+                            <h4>Your journey is reserved.</h4>
+                            <p id="bookingSuccess">A member of our concierge team will contact you shortly.</p>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/book.js"></script>
+
+</body>
+
+</html>

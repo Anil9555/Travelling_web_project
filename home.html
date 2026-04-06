@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Home</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    background:linear-gradient(135deg,#141e30,#243b55);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    color:white;
+    font-family:sans-serif;
+    text-align:center;
+}
+
+button,
+a{
+    padding:12px 25px;
+    border:none;
+    border-radius:10px;
+    background:#ffb347;
+    font-weight:bold;
+    cursor:pointer;
+    color:#111;
+    text-decoration:none;
+    margin-top:12px;
+}
+</style>
+</head>
+
+<body>
+
+<h1 id="welcomeTitle">Welcome to Luxury Travel</h1>
+<p>Your premium journey begins here.</p>
+
+<a href="book.html">Continue to Booking</a>
+<button onclick="logout()">Logout</button>
+
+<script src="assets/js/auth.js"></script>
+<script>
+const currentUser = window.travelAuth.getCurrentUser();
+
+if(!currentUser){
+    window.location.href = "login.html";
+}
+
+document.getElementById("welcomeTitle").textContent = "Welcome, " + currentUser.name;
+
+function logout(){
+    window.travelAuth.logout();
+    window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
